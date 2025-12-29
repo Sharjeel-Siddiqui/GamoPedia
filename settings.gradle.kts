@@ -1,0 +1,51 @@
+rootProject.name = "GamopediaApplication"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+pluginManagement {
+    repositories {
+        google {
+            mavenContent {
+                includeGroupAndSubgroups("androidx")
+                includeGroupAndSubgroups("com.android")
+                includeGroupAndSubgroups("com.google")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        google {
+            mavenContent {
+                includeGroupAndSubgroups("androidx")
+                includeGroupAndSubgroups("com.android")
+                includeGroupAndSubgroups("com.google")
+            }
+        }
+        mavenCentral()
+    }
+}
+
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
+include(":composeApp")
+include(":core-database")
+include(":core-network")
+
+include(":game:data")
+include(":game:domain")
+include(":game:presentation")
+
+include(":search:data")
+include(":search:domain")
+include(":search:presentation")
+
+include(":favourite:data")
+include(":favourite:domain")
+include(":favourite:presentation")
+
+
